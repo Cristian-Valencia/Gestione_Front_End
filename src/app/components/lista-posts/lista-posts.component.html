@@ -1,0 +1,35 @@
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th>
+            <th>Created At</th>
+            <th>Azioni</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let pos of elenco">
+
+            <td>
+                <a href="/post/dettaglio/{{pos.id}}">{{ pos.title }}</a>
+            </td>
+            <td>{{ pos.content }}</td>
+            <td>{{ pos.author }}</td>
+            <td>{{ pos.createdAt }}</td>
+            <td>
+                <button type="button" class="btn btn-danger" (click)="Elimina(pos.id)">
+                    Elimina
+                </button>
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>

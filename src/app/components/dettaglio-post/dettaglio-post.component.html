@@ -1,0 +1,17 @@
+<h1>Dettaglio Post: {{postDettaglio.title}}</h1>
+
+<ul>
+
+    <li>Contenuto: {{postDettaglio.content}}</li>
+    <li>Scritto da: {{postDettaglio.author}}</li>
+    <li>Data di pubblicazione: {{postDettaglio.createdAt}}</li>
+
+</ul>
+
+<h2>Categorie: </h2>
+
+<ul *ngFor = "let cat of elencoCategorie">
+
+    <li>{{cat.nameCategory}}</li>
+
+</ul>
