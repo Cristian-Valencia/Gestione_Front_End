@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+/*
 body {
   margin: 0;
   padding: 0;
@@ -34,7 +35,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+/* HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -66,3 +67,4 @@ a{
 }
 
 
+*/

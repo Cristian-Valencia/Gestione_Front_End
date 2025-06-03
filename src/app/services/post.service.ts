@@ -61,9 +61,6 @@ export class PostService {
     try{
 
       let risposta = (await fetch(`http://localhost:8080/api/posts/${varCodice}`)).json()
-        
-
-
       
       return risposta;
 
@@ -76,6 +73,71 @@ export class PostService {
     return null;
 
   }
+
+
+  async Inserimento(pos: any) : Promise<boolean>{
+
+
+    let risultato = await (await fetch(" http://localhost:8080/api/posts?categoryIds=5",
+      {
+        headers:{
+          "Content-Type": "application/json"
+        },
+        method :"POST",
+        body: JSON.stringify(pos)
+      }
+    )).json();
+
+    console.log(risultato);
+
+    if(risultato){
+      return true;
+    }
+
+    return false;
+
+
+  }
+
+  async Modifica(pos:any) : Promise<boolean>{
+
+    try{
+
+      let varCodice = pos.id;
+    
+      const response = await (await fetch(`http://localhost:8080/api/posts/${varCodice}?categoryIds=1&categoryIds=8`,
+      {
+        headers:{
+          "Content-Type": "application/json"
+        },
+        method :"PUT",
+        body: JSON.stringify(pos)
+      }
+    )).json();
+
+    console.log(pos);
+
+    if(!response){
+
+      console.log(`Errore HTTP: ${response}`);
+      return false;
+
+    } else{
+      return true;
+    } 
+
+
+    }catch(error){
+
+      console.log("Errore nel dettaglio: ", error);
+
+    }
+
+    return false;
+
+
+  }
+  
 
 
 }

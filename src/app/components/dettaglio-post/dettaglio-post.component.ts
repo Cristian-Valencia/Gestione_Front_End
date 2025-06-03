@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +15,11 @@ export class DettaglioPostComponent implements OnInit {
   postDettaglio : any = {};
   elencoCategorie : any[] = new Array();
 
-  constructor( private rottaAttiva: ActivatedRoute, private service:PostService){}
+  constructor( 
+    private rottaAttiva: ActivatedRoute, 
+    private service:PostService,
+    private router: Router  
+  ){}
 
   ngOnInit(): void {
     this.rottaAttiva.params.subscribe(
@@ -42,6 +46,12 @@ export class DettaglioPostComponent implements OnInit {
 
       }
     )
+  }
+
+  Modifica(varCodice : string | undefined) : void{
+    if(varCodice){
+      this.router.navigateByUrl(`/post/modifica/${varCodice}`)
+    }
   }
 
 
