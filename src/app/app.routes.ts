@@ -3,6 +3,7 @@ import { ListaPostsComponent } from './components/lista-posts/lista-posts.compon
 import { InserisciPostComponent } from './components/inserisci-post/inserisci-post.component';
 import { DettaglioPostComponent } from './components/dettaglio-post/dettaglio-post.component';
 import { ModificaPostComponent } from './components/modifica-post/modifica-post.component';
+import { ListaCategorieComponent } from './components/lista-categorie/lista-categorie.component';
 
 export const routes: Routes = [
 
@@ -27,10 +28,16 @@ export const routes: Routes = [
         component: DettaglioPostComponent
     },
 
-        {
+    {
 
         path: "post/modifica/:codice",
         component: ModificaPostComponent
+    },
+
+    {
+
+        path: "categoria/lista",
+        component: ListaCategorieComponent
     },
 
 

@@ -1,0 +1,32 @@
+<h1>Lista Categorie</h1>
+
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+            <th>Nome Categoria</th>
+            <th>Azioni</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let cat of elenco">
+
+            <td>
+                <a href="">{{ cat.nameCategory }}</a>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger">
+                    Elimina
+                </button>
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
