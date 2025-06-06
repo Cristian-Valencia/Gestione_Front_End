@@ -4,6 +4,8 @@ import { InserisciPostComponent } from './components/inserisci-post/inserisci-po
 import { DettaglioPostComponent } from './components/dettaglio-post/dettaglio-post.component';
 import { ModificaPostComponent } from './components/modifica-post/modifica-post.component';
 import { ListaCategorieComponent } from './components/lista-categorie/lista-categorie.component';
+import { DettaglioCategoriaComponent } from './components/dettaglio-categoria/dettaglio-categoria.component';
+import { ModificaCategoriaComponent } from './components/modifica-categoria/modifica-categoria.component';
 
 export const routes: Routes = [
 
@@ -39,6 +41,19 @@ export const routes: Routes = [
         path: "categoria/lista",
         component: ListaCategorieComponent
     },
+
+    {
+
+        path: "categoria/dettaglio/:codice",
+        component: DettaglioCategoriaComponent
+    },
+
+        {
+
+        path: "categoria/modifica/:codice",
+        component: ModificaCategoriaComponent
+    },
+
 
 
 ];

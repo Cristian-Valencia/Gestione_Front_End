@@ -17,10 +17,10 @@
         <tr *ngFor = "let cat of elenco">
 
             <td>
-                <a href="">{{ cat.nameCategory }}</a>
+                <a href="/categoria/dettaglio/{{cat.id}}">{{ cat.nameCategory }}</a>
             </td>
             <td>
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger" (click) = "Elimina(cat.id)">
                     Elimina
                 </button>
             </td>

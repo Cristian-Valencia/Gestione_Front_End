@@ -70,7 +70,8 @@ export class CategorieService {
 
     try {
 
-      let risposta = await fetch(`http://localhost:8080/api/categories/${varId}`)
+      let risposta = await (await fetch(`http://localhost:8080/api/categories/${varId}`)).json()
+
 
       return risposta;
 

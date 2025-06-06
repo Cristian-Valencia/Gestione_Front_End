@@ -29,5 +29,42 @@ export class ListaCategorieComponent implements OnInit {
 
   }
 
+  Elimina ( id : number | undefined ) {
+
+    console.log("bottone Elimina funzionante");
+
+    if(id){
+
+      this.service.Eliminazione(id)
+        .then(ris =>{
+
+          if(ris){
+
+            alert("Eliminazione effettuata con successo")
+
+            this.service.RecuperaListaCategorie().then(ris=>{
+
+              this.elenco = ris;
+
+            })
+
+          } else {
+
+            alert("Errore di Eliminazione")
+
+          }
+
+        })
+
+
+    }else{
+
+      alert("Errore, codice di Eliminazione non presente")
+
+    }
+
+
+  }
+
 
 }
